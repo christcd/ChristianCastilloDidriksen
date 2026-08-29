@@ -11,47 +11,28 @@
 
 <!-- ============================================================
      HERO
-     Fri tolkning av forsiden — flat oransje bakgrunn (ingen
-     gradient/mønster), samme tekst som i Figma-filen.
+     Matcher forsiden (slide 1) i Portfolio_Finale2.pdf: diagonal
+     gull→oransje gradient med subtilt rutenettmønster, hvit tekst,
+     standard nav-farger (sort/blå), ingen dekor-sirkler eller knapper.
      ============================================================ -->
 <header class="hero">
-  <div class="hero-deco blue" aria-hidden="true"></div>
-  <div class="hero-deco ink" aria-hidden="true"></div>
-  <!-- Bloob: klynge av røde/oransje prikker, ulike størrelser og
-       toner, plassert i det tomme området til høyre — svinger
-       oppover mot sirkelen øverst, uten å legge seg bak tekstspalten. -->
-  <div class="hero-blob" aria-hidden="true">
-    <span class="blob" style="--w:230px; --top:76%; --left:70%; --bg:#4A0910; --o:.95;"></span>
-    <span class="blob" style="--w:150px; --top:56%; --left:82%; --bg:#6B0D14; --o:.9;"></span>
-    <span class="blob" style="--w:105px; --top:66%; --left:92%; --bg:#8C2A0A; --o:.92;"></span>
-    <span class="blob" style="--w:66px;  --top:44%; --left:74%; --bg:#C4293A; --o:.92;"></span>
-    <span class="blob" style="--w:125px; --top:34%; --left:86%; --bg:#A8101F; --o:.9;"></span>
-    <span class="blob" style="--w:36px;  --top:42%; --left:99%; --bg:#E8600A; --o:.95;"></span>
-    <span class="blob" style="--w:80px;  --top:20%; --left:80%; --bg:#A8101F; --o:.92;"></span>
-    <span class="blob" style="--w:28px;  --top:26%; --left:94%; --bg:#D6401A; --o:.95;"></span>
-    <span class="blob" style="--w:50px;  --top:6%;  --left:86%; --bg:#8C2A0A; --o:.9;"></span>
-    <span class="blob" style="--w:18px;  --top:0%;  --left:96%; --bg:#C4293A; --o:.95;"></span>
-  </div>
   <div class="wrap hero-inner">
-    <nav class="site-nav nav-on-orange">
+    <nav class="site-nav">
       <a href="index.html" aria-label="Til forsiden"><span class="logo-dot"></span></a>
       <div class="nav-links">
-        <a href="index.html#prosjekter">Prosjekter</a>
+        <a href="index.html#prosjekter" class="active">Prosjekter</a>
         <a href="om-meg.html">Om meg</a>
         <a href="index.html#kontakt">Kontakt</a>
       </div>
     </nav>
 
-    <h1 class="reveal in-view">Christian Castillo Didriksen</h1>
-    <div class="hero-rule reveal in-view" aria-hidden="true"></div>
-    <div class="hero-copy reveal in-view">
-      <p>Hei! Jeg er Christian, en UX-designer som er i ferd med å fullføre bacheloren min i Design, Bruk og Interaksjon ved UiO.</p>
-      <p>Drømmen min er å jobbe med det ingen legger merke til: de små mikrointeraksjonene som virker trivielle alene, men som til sammen definearer brukeropplevelsen.</p>
-      <p class="cue">Her er noen av tingene jeg har laget så langt.</p>
-    </div>
-    <div class="hero-cta">
-      <a class="btn btn-primary" href="#prosjekter">Se prosjekter</a>
-      <a class="btn" href="om-meg.html">Om meg</a>
+    <div class="hero-grid">
+      <h1 class="reveal in-view">Christian Castillo Didriksen</h1>
+      <div class="hero-copy reveal in-view">
+        <p>Hei! Jeg er Christian, en UX-designer som er i ferd med å fullføre bacheloren min i Design, Bruk og Interaksjon ved UiO.</p>
+        <p>Drømmen min er å jobbe med det ingen legger merke til: de små mikrointeraksjonene som virker trivielle alene, men som til sammen definearer brukeropplevelsen.</p>
+        <p class="cue">Her er noen av tingene jeg har laget så langt.</p>
+      </div>
     </div>
   </div>
 </header>

@@ -20,9 +20,9 @@
   --body-ink:   #5A2A10;   /* brødtekst — varm, mørk rustbrun */
   --orange:     #E8600A;   /* hovedaksent: labels, tags, lenker-hover */
   --pink:       #EE0093;   /* lenker: "Om Meg", "CV", "Link til prosjekt" */
-  --blue:       #2B32FF;   /* logo-prikk, "Eget prosjekt"-kort */
-  --navy:       #10193B;   /* hero-bakgrunn — test-variant */
-  --blood:      #A8101F;   /* hero-aksent (prikker) — test-variant, blodrød */
+  --blue:       #2B32FF;   /* logo-prikk, "Eget prosjekt"-kort, aktiv nav-lenke */
+  --gold:       #FFC24D;   /* hero-gradient, lys ende (matcher PDF-forsiden) */
+  --hero-orange-dark: #B8440A; /* hero-gradient, mørk ende (mørkere enn --orange) */
 
   --font: 'Clash Display', 'Segoe UI', sans-serif;
 
@@ -78,67 +78,39 @@ a:focus-visible, button:focus-visible{ outline:3px solid var(--blue); outline-of
 }
 .nav-links a:hover{ border-color:currentColor; }
 .nav-links a.active{ color:var(--blue); border-color:var(--blue); }
-.nav-on-orange a{ color:#fff; }
-.nav-on-orange a.active{ color:var(--blood); border-color:var(--blood); }
-.nav-on-orange .logo-dot{ background:var(--blood); }
 
 /* ============================================================
-   HERO — fri tolkning, mørk marineblå, hvit tekst, blodrøde
-   aksentprikker (test-variant), ingen gradient/mønster
+   HERO — matcher forsiden (slide 1) i Portfolio_Finale2.pdf:
+   diagonal gull→oransje gradient + subtilt rutenett, hvit tekst,
+   to-spalte (overskrift / ingress) som i PDF-en.
    ============================================================ */
 .hero{
-  position:relative; background:var(--navy); overflow:hidden;
+  position:relative; overflow:hidden;
+  min-height:100vh; display:flex; flex-direction:column;
+  background:
+    repeating-linear-gradient(90deg, rgba(255,255,255,.16) 0 1px, transparent 1px 32px),
+    repeating-linear-gradient(0deg, rgba(255,255,255,.16) 0 1px, transparent 1px 32px),
+    linear-gradient(45deg, var(--gold) 0%, var(--hero-orange-dark) 100%);
   padding-bottom: clamp(3.5rem, 9vw, 6.5rem);
 }
-.hero-deco{
-  display:none; position:absolute; z-index:0; pointer-events:none; border-radius:50%;
-}
-.hero-deco.blue{ width:clamp(160px,18vw,260px); height:clamp(160px,18vw,260px); background:var(--blood); top:-8%; right:4%; }
-.hero-deco.ink{ display:none; }
-@media (min-width: 1000px){
-  .hero-deco.blue{ display:block; }
-}
-.hero-blob{
-  display:none; position:absolute; inset:0; z-index:0; overflow:hidden; pointer-events:none;
-}
-.hero-blob .blob{
-  position:absolute; border-radius:50%;
-  width:var(--w); height:var(--w);
-  top:var(--top); left:var(--left);
-  background:var(--bg); opacity:var(--o, .9);
-}
-@media (min-width: 1000px){
-  .hero-blob{ display:block; }
-}
-.hero-inner{ position:relative; z-index:1; }
-.hero-kicker{
-  display:inline-flex; align-items:center; gap:.6em;
-  font-size:.9rem; font-weight:500; letter-spacing:.06em; text-transform:uppercase;
-  color:var(--ink); background:var(--cream); border:2px solid var(--ink);
-  padding:.5em 1em; margin-bottom:var(--space-m);
+.hero-inner{ position:relative; z-index:1; display:flex; flex-direction:column; flex:1; width:100%; }
+.hero-grid{
+  display:grid; grid-template-columns: 1fr 1fr; gap:clamp(2rem, 6vw, 4.75rem);
+  align-items:start; flex:1; align-content:center;
 }
 .hero h1{
-  font-family:var(--font); font-weight:600; color:#fff;
-  font-size:clamp(2.6rem, 6.4vw, 4.75rem); line-height:1.02; letter-spacing:-0.01em;
-  max-width:16ch; position:relative; z-index:1;
+  font-family:var(--font); font-weight:300; color:#fff; white-space:nowrap;
+  font-size:clamp(1.5rem, 2.4vw, 2.25rem); line-height:1.02; letter-spacing:-0.01em;
 }
-.hero-rule{ display:flex; align-items:center; gap:.6em; margin-block: var(--space-m); }
-.hero-rule::before{ content:""; display:block; width:56px; height:6px; background:var(--pink); }
-.hero-rule::after{ content:""; display:block; width:14px; height:14px; border-radius:50%; background:var(--blood); }
-.hero-copy{ display:grid; gap:1.4em; max-width:640px; }
+.hero-copy{ display:grid; gap:1.4em; }
 .hero-copy p{
-  font-size:clamp(1.15rem, 1.9vw, 1.4rem); font-weight:300; color:#fff; line-height:1.5;
+  font-size:clamp(.875rem, 1.2vw, 1rem); font-weight:300; color:#fff; line-height:1.6;
 }
-.hero-copy p.cue{ font-weight:500; font-size:clamp(1.05rem, 1.6vw, 1.2rem); }
-.hero-cta{ display:flex; flex-wrap:wrap; gap:1em; margin-top:var(--space-m); }
-.hero .btn{
-  display:inline-flex; align-items:center; gap:.6em; padding:.9em 1.8em;
-  font-family:var(--font); font-weight:500; font-size:.95rem; letter-spacing:.02em;
-  border:2px solid #fff; background:transparent; color:#fff;
-  transition:transform .18s var(--ease), background .18s var(--ease), color .18s var(--ease);
+.hero-copy p.cue{ font-weight:500; font-size:clamp(.8125rem, 1.05vw, .9375rem); }
+@media (max-width: 1150px){
+  .hero-grid{ grid-template-columns:1fr; }
+  .hero h1{ white-space:normal; }
 }
-.hero .btn-primary{ background:#fff; color:var(--navy); border-color:#fff; }
-.hero .btn:hover{ transform:translate(4px,-4px); }
 
 /* ============================================================
    INTRO ROW (foto + rolle)
