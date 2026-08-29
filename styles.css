@@ -194,9 +194,11 @@ a:focus-visible, button:focus-visible{ outline:3px solid var(--blue); outline-of
 .project-media{ margin-bottom: var(--space-l); }
 .project-media.phones{
   display:grid; grid-template-columns:repeat(4, 1fr); gap: clamp(.75rem, 1.6vw, 1.25rem);
+  background:#fff; padding: clamp(.75rem, 1.6vw, 1.25rem);
 }
 .project-media.phones .ph{ aspect-ratio: 9/19; }
-.project-media.phones .ph.has-img img{ object-position:center; }
+.project-media.phones .ph.has-img{ background:#fff; }
+.project-media.phones .ph.has-img img{ object-fit:contain; object-position:center; }
 .project-media.single .ph{ aspect-ratio: 4/3; }
 .project-media.single.wide .ph{ aspect-ratio: 1818/1136; }
 
@@ -224,7 +226,9 @@ a:focus-visible, button:focus-visible{ outline:3px solid var(--blue); outline-of
    ============================================================ */
 .more-projects{ padding-block: var(--space-2xl) var(--space-2xl); }
 .more-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap: clamp(1.75rem, 3.5vw, 2.75rem); margin-top: var(--space-l); }
+.more-card{ display:flex; flex-direction:column; }
 .more-card .ph{ aspect-ratio: 4/3; margin-bottom: var(--space-m); }
+.more-card .link-pink{ margin-top:auto; align-self:flex-start; }
 .more-card .ph.has-img img{ width:100%; height:100%; object-fit:cover; display:block; }
 .more-card .ph.mystery{
   background:var(--blue); border-color:var(--blue); color:#fff;
