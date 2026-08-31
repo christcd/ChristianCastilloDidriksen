@@ -9,35 +9,50 @@
 </head>
 <body>
 
-<div class="wrap">
-  <nav class="site-nav">
-    <a href="index.html" aria-label="Til forsiden"><span class="logo-dot"></span></a>
-    <div class="nav-links">
-      <a href="index.html#prosjekter">Prosjekter</a>
-      <a href="om-meg.html" class="active">Om meg</a>
-      <a href="index.html#kontakt">Kontakt</a>
+<!-- ============================================================
+     PAGE-HEAD — matcher hero på forsiden: samme skjermfyllende
+     høyde, blått rutenettmønster, nav ligger oppå gradienten.
+     ============================================================ -->
+<header class="page-head">
+  <div class="wrap page-head-inner">
+    <nav class="site-nav">
+      <a href="index.html" aria-label="Til forsiden"><span class="logo-dot"></span></a>
+      <div class="nav-links">
+        <a href="index.html">Prosjekter</a>
+        <a href="om-meg.html" class="active">Om meg</a>
+        <a href="index.html#kontakt">Kontakt</a>
+      </div>
+    </nav>
+
+    <div class="page-head-content">
+      <h1 class="reveal in-view">Om Meg</h1>
+      <span class="eyebrow-role reveal in-view">Christian Castillo Didriksen</span>
     </div>
-  </nav>
-</div>
+  </div>
+</header>
 
 <main>
+  <!-- ============================================================
+       Reisebilde — trukket opp under hero med negativ margin, slik
+       at toppen av bildet (hodet) stikker opp gjennom det blå
+       rutenettet når siden lastes. .page-head har høyere z-index
+       enn dette bildet, så griden tegnes oppå i overlappen.
+       ============================================================ -->
+  <section class="hero-overlap wrap">
+    <div class="ph has-img reveal in-view">
+      <img src="images/about-travel.jpg" alt="Christian foran Colosseum i Roma">
+    </div>
+  </section>
+
   <!-- ============================================================
        OM MEG — intro
        BYTT UT: erstatt .about-photo med portrettbilde (ca. 2:3).
        ============================================================ -->
-  <section class="page-head">
-    <div class="wrap">
-      <h1 class="reveal in-view">Om Meg</h1>
-      <span class="eyebrow-role reveal in-view">Christian Castillo Didriksen</span>
-    </div>
-  </section>
 
   <section class="about-row">
     <div class="wrap about-grid">
-      <div class="about-photo ph reveal">
-        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="1"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg>
-        <span class="ph-label">Portrettbilde</span>
-        <span class="ph-spec">2:3 · ca. 900 × 1350</span>
+      <div class="about-photo ph has-img reveal">
+        <img src="images/about-portrait.jpg" alt="Portrett av Christian Castillo Didriksen">
       </div>
 
       <div class="about-copy reveal">
@@ -50,25 +65,9 @@
   </section>
 
   <!-- ============================================================
-       To bilder side ved side
-       BYTT UT: whiteboard-skisse + strand/reise-bilde (ca. 4:3).
-       ============================================================ -->
-  <section class="about-duo wrap">
-    <div class="ph reveal">
-      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="1"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg>
-      <span class="ph-label">Bilde — arbeid/skisse</span>
-      <span class="ph-spec">4:3 · ca. 1200 × 900</span>
-    </div>
-    <div class="ph reveal">
-      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="1"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg>
-      <span class="ph-label">Bilde — reise/fritid</span>
-      <span class="ph-spec">4:3 · ca. 1200 × 900</span>
-    </div>
-  </section>
-
-  <!-- ============================================================
        HVA GJØR JEG ELLERS?
-       BYTT UT: klasserom/gruppebilde (ca. 4:3).
+       Reisebildet står nå her, side om side med hobby-teksten
+       (samme mønster som portrett + intro-tekst øverst på siden).
        ============================================================ -->
   <section class="hobbies">
     <div class="wrap hobbies-grid">
@@ -83,23 +82,13 @@
     </div>
   </section>
 
-  <section class="wrap" style="padding-bottom: var(--space-l);">
-    <div class="ph reveal" style="aspect-ratio: 21/9;">
-      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="1"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg>
-      <span class="ph-label">Bilde — klasserom/team</span>
-      <span class="ph-spec">21:9 · ca. 1800 × 770</span>
-    </div>
-  </section>
-
   <!-- ============================================================
        Bredt avslutningsbilde
        BYTT UT: surfebrett/strand-bilde, full bredde (ca. 16:8).
        ============================================================ -->
   <section class="about-wide wrap">
-    <div class="ph reveal">
-      <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="1"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg>
-      <span class="ph-label">Bilde — surfing/strand</span>
-      <span class="ph-spec">16:8 · ca. 1920 × 960</span>
+    <div class="ph has-img reveal">
+      <img src="images/about-surf.jpg" alt="Christian med bodyboard på stranden, Gold Coast">
     </div>
   </section>
 
@@ -110,12 +99,12 @@
 
 <footer class="site-footer">
   <div class="wrap footer-inner">
-    <span class="name">Christian Castillo Didriksen</span>
+    <a class="name top-link" href="#">Christian Castillo Didriksen</a>
     <a class="top-link" href="#">↑ Toppen</a>
     <span class="socials">
-      <a href="#" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="#" target="_blank" rel="noopener">GitHub</a>
-      <a href="mailto:ccdidriksen@outlook.com">E-post</a>
+      <a href="https://www.linkedin.com/in/christian-castillo-didriksen-2727063b5/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/christcd" target="_blank" rel="noopener">GitHub</a>
+      <a href="mailto:christian.cas.did@outlook.com">E-post</a>
     </span>
   </div>
 </footer>
