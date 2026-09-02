@@ -70,6 +70,7 @@ a:focus-visible, button:focus-visible{ outline:3px solid var(--blue); outline-of
   display:flex; align-items:center; justify-content:space-between;
   padding-block: clamp(1.5rem, 3vw, 2.25rem);
 }
+.hero .site-nav{ padding-block: .8125rem; }
 .logo-dot{ width:15px; height:15px; border-radius:50%; background:var(--blue); display:block; }
 .nav-links{ display:flex; align-items:center; gap: clamp(1.5rem, 3vw, 2.75rem); }
 .nav-links a{
@@ -88,16 +89,27 @@ a:focus-visible, button:focus-visible{ outline:3px solid var(--blue); outline-of
 .hero{
   position:relative; overflow:hidden;
   min-height:100vh; display:flex; flex-direction:column;
-  background:
+  background-color:var(--cream);
+  background-image:
     repeating-linear-gradient(90deg, rgba(255,255,255,.16) 0 1px, transparent 1px 32px),
     repeating-linear-gradient(0deg, rgba(255,255,255,.16) 0 1px, transparent 1px 32px),
     linear-gradient(45deg, var(--gold) 0%, var(--hero-orange-dark) 100%);
+  background-size: 100% calc(100% - 128px), 100% calc(100% - 128px), 100% calc(100% - 128px);
+  background-position: center, center, center;
+  background-repeat: no-repeat, no-repeat, no-repeat;
   padding-bottom: clamp(3.5rem, 9vw, 6.5rem);
 }
 .hero-inner{ position:relative; z-index:1; display:flex; flex-direction:column; flex:1; width:100%; }
-.hero-grid{
-  display:grid; grid-template-columns: 1fr 1fr; gap:clamp(2rem, 6vw, 4.75rem);
-  align-items:start; flex:1; align-content:center;
+.hero-grid{ display:flex; align-items:center; flex:1; }
+.hero-text{ display:flex; flex-direction:column; gap:1.5rem; max-width:46ch; }
+.hero-photo{
+  display:block; position:absolute; z-index:0;
+  right: var(--pad-inline); bottom:64px;
+  max-height:calc(100% - 128px); max-width:52%;
+  height:auto; width:auto;
+}
+@media (max-width: 1150px){
+  .hero-photo{ display:none; }
 }
 .hero h1{
   font-family:var(--font); font-weight:300; color:#fff; white-space:nowrap;
@@ -109,7 +121,6 @@ a:focus-visible, button:focus-visible{ outline:3px solid var(--blue); outline-of
 }
 .hero-copy p.cue{ font-weight:500; font-size:clamp(.8125rem, 1.05vw, .9375rem); }
 @media (max-width: 1150px){
-  .hero-grid{ grid-template-columns:1fr; }
   .hero h1{ white-space:normal; }
 }
 
@@ -117,9 +128,7 @@ a:focus-visible, button:focus-visible{ outline:3px solid var(--blue); outline-of
    INTRO ROW (foto + rolle)
    ============================================================ */
 .intro{ padding-block: var(--space-2xl) var(--space-xl); }
-.intro-grid{ display:grid; grid-template-columns: 1fr 1fr; gap:clamp(2rem, 6vw, 4.75rem); align-items:start; }
-.intro-photo{ width:100%; max-width:480px; aspect-ratio:2663/3207; margin-top:-222px; position:relative; z-index:2; }
-.intro-photo img{ object-position:center top; }
+.intro-grid{ display:grid; grid-template-columns: 1fr; }
 .eyebrow-role{
   font-size:0.9375rem; font-weight:400; color:var(--orange); margin-bottom:.6em;
 }
@@ -285,7 +294,7 @@ a:focus-visible, button:focus-visible{ outline:3px solid var(--blue); outline-of
    RESPONSIVT
    ============================================================ */
 @media (max-width: 900px){
-  .intro-grid, .about-grid, .project-grid, .hobbies-grid{ grid-template-columns:1fr; }
+  .about-grid, .project-grid, .hobbies-grid{ grid-template-columns:1fr; }
   .project-media.phones{ grid-template-columns:repeat(2, 1fr); }
   .subgrid, .more-grid{ grid-template-columns:1fr; }
   .nav-links{ gap:1.25rem; }
