@@ -228,23 +228,25 @@ a:focus-visible, button:focus-visible{ outline:3px solid var(--blue); outline-of
 .page-head{
   position:relative; z-index:1; overflow:hidden;
   min-height:100vh; display:flex; flex-direction:column;
-  background:
+  background-color:var(--cream);
+  background-image:
     repeating-linear-gradient(90deg, rgba(255,255,255,.16) 0 1px, transparent 1px 32px),
     repeating-linear-gradient(0deg, rgba(255,255,255,.16) 0 1px, transparent 1px 32px),
     linear-gradient(45deg, var(--blue-light) 0%, var(--blue) 100%);
+  background-size: 100% calc(100% - 128px), 100% calc(100% - 128px), 100% calc(100% - 128px);
+  background-position: center, center, center;
+  background-repeat: no-repeat, no-repeat, no-repeat;
   padding-bottom: clamp(3.5rem, 9vw, 6.5rem);
 }
+.page-head .site-nav{ padding-block: .8125rem; }
 .page-head-inner{ position:relative; z-index:1; display:flex; flex-direction:column; flex:1; width:100%; }
 .page-head-content{ flex:1; display:flex; flex-direction:column; justify-content:center; }
 .page-head h1{
   font-family:var(--font); font-weight:600; color:#fff;
   font-size:clamp(2.25rem, 4.6vw, 3.4rem); letter-spacing:-0.005em;
 }
-.page-head .eyebrow-role{ margin-top:.5em; color:#fff; opacity:.85; }
-.page-head .logo-dot{ background:#fff; }
-.page-head .nav-links a{ color:#fff; opacity:.8; }
-.page-head .nav-links a:hover{ opacity:1; }
-.page-head .nav-links a.active{ color:#fff; border-color:#fff; opacity:1; }
+.page-head .eyebrow-role{ margin-top:.5em; color:#fff; opacity:.85; font-weight:600; }
+.page-head .logo-dot{ background:var(--orange); }
 
 /* "Om meg"-lenken skal alltid være rosa når den er aktiv/markert,
    samme rosa som CV- og "Om Meg"-lenkene ellers på siden. */
@@ -262,14 +264,16 @@ a:focus-visible, button:focus-visible{ outline:3px solid var(--blue); outline-of
 .hobbies .eyebrow-role{ color:var(--blue); }
 .hobbies-copy p{ font-size:0.9375rem; font-weight:300; max-width:58ch; margin-bottom:1.2em; }
 
-/* Reisebilde trukket opp under hero (se HTML-kommentar) */
-.hero-overlap{
-  position:relative; z-index:2;
-  margin-top: -80px; padding-bottom: var(--space-2xl);
+/* Bilde i page-head, samme teknikk som .hero-photo på forsiden:
+   bunnen linjer opp nøyaktig med bunnen av rutenett/gradient. */
+.page-head-photo{
+  display:block; position:absolute; z-index:0;
+  right: calc(var(--pad-inline) + 118px); bottom:64px;
+  max-height:calc(100% - 128px); max-width:40%;
+  height:auto; width:auto;
 }
-.hero-overlap .ph{ aspect-ratio:16/8; }
-.hero-overlap .ph.has-img img{
-  width:100%; height:100%; object-fit:cover; object-position:center 100%; display:block;
+@media (max-width: 1150px){
+  .page-head-photo{ display:none; }
 }
 
 .about-wide{ padding-block: 0 var(--space-2xl); }
