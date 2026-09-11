@@ -182,7 +182,8 @@ a:focus-visible, button:focus-visible{ outline:3px solid var(--blue); outline-of
 .project-media.phones .ph.has-img{ background:#fff; }
 .project-media.phones .ph.has-img img{ object-fit:contain; object-position:center; }
 .project-media.single .ph{ aspect-ratio: 4/3; }
-.project-media.single.wide .ph{ aspect-ratio: 1818/1136; }
+.project-media.single.mockup .ph{ aspect-ratio: 1716/917; }
+.project-media.single.fan .ph{ aspect-ratio: 1784/882; }
 
 .project-grid{ display:grid; grid-template-columns: 1fr 1.3fr; gap: clamp(2rem, 6vw, 4.75rem); align-items:start; }
 .project-head h2{
@@ -243,8 +244,9 @@ a:focus-visible, button:focus-visible{ outline:3px solid var(--blue); outline-of
 .page-head-inner{ position:relative; z-index:1; display:flex; flex-direction:column; flex:1; width:100%; }
 .page-head-content{ flex:1; display:flex; flex-direction:column; justify-content:center; }
 .page-head h1{
-  font-family:var(--font); font-weight:600; color:#fff;
-  font-size:clamp(2.25rem, 4.6vw, 3.4rem); letter-spacing:-0.005em;
+  font-family:var(--font); font-weight:700; color:#fff;
+  font-size:clamp(2.5rem, 5vw, 4.5rem); letter-spacing:-0.005em; line-height:1.02;
+  margin-top:-131px;
 }
 .page-head .eyebrow-role{ margin-top:.5em; color:#fff; opacity:.85; font-weight:600; }
 .page-head .logo-dot{ background:var(--orange); }
